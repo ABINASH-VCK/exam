@@ -24,4 +24,8 @@ public class GlobalExceptionHandler {
 	public ResponseEntity categoryAlreadyExists(CategoryAlreadyExistsException ex) {
 		return new ResponseEntity("No duplicate allowed",HttpStatus.NOT_FOUND);
 	}
+	@ExceptionHandler(value=QuizNotFoundException.class)
+	public ResponseEntity QuizNotFoundException(QuizNotFoundException ex) {
+		return new ResponseEntity("Quiz not found",HttpStatus.NOT_FOUND);
+	}
 }
